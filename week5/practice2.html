@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SSE2034</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.3.1-dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="index.css" rel="stylesheet">
+    <link href="practice.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="blog-header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="title-navbar">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link text-white font-weight-bold" href="#" onclick="location.href='index.html'" id="0"> 
+                  SSE2034 WEEK5 Home
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link text-white font-weight-bold dropdown-toggle" href="#" id="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Practice </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#" onclick="location.href='practice1.html'">Practice1</a>
+                  <a class="dropdown-item" href="#" onclick="location.href='practice2.html'">Practice2</a>
+                  <a class="dropdown-item" href="#" onclick="location.href='practice3.html'">Practice3</a>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link font-weight-bold text-white" href="#" onclick="location.href='lab.html'" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  LAB
+                </a>
+              </li>
+
+              <li class="nav-item"> 
+                <a class="nav_item nav-link font-weight-bold text-white" href="#" onclick="location.href='homework.html'" id="3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Homework
+                </a>
+              </li>
+
+              <li class="nav-item"> 
+                <a class="nav-link font-weight-bold text-white" href="#" onclick="location.href='guideline.html'" id="4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Submission Guideline
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <div class="container">
+      <div class = "problem_container">
+        <!-- 문제 -->
+        <div class="col-md-12">
+          <div class="headline">
+            <h4> 문제 (String) </h4>
+          </div>
+          <div class="problem_text">
+            <p>
+              문장을 읽은 뒤, 줄의 첫 글자를 대문자로 바꾸는 프로그램을 작성하시오.
+            </p>
+          </div>
+        </div>
+        <!-- 입력 -->
+        <div class="col-md-12">
+          <div class="headline">
+            <h4> 입력 </h4>
+          </div>
+          <div class="problem_text">
+            <p>
+              첫째 줄에 줄의 수 N이 주어진다. 다음 N개의 줄에는 문장이 주어진다. 각 문장에 들어있는 글자의 수는 30을 넘지 않는다. 모든 줄의 첫 번째 글자는 알파벳이다.
+            </p>
+          </div>
+        </div>
+        <!-- 출력  -->
+        <div class="col-md-12">
+          <div class="headline">
+            <h4> 출력 </h4>
+          </div>
+          <div class="problem_text">
+            <p>
+              각 줄의 첫글자를 대문자로 바꾼뒤 출력한다.
+            </p>
+          </div>
+        </div>
+        <!-- 입/출력 예시 -->
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <section id="sampleinput1">
+              <div class="headline">
+              <h4>예제 입력 1</h4>
+              </div>
+              <pre class="sampledata" id="sample-input-1">5<br>powdered Toast Man<br>skeletor<br>Electra Woman and Dyna Girl<br>she-Ra Princess of Power<br>darth Vader</pre>
+              </section>
+            </div>
+            <div class="col-md-6">
+              <section id="sampleoutput1">
+              <div class="headline">
+              <h4>예제 출력 1</h4>
+              </div>
+              <pre class="sampledata" id="sample-output-1">Powdered Toast Man<br>Skeletor<br>Electra Woman and Dyna Girl<br>She-Ra Princess of Power<br>Darth Vader</pre>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- 힌트 -->
+        <div class="col-md-12">
+          <div class="headline">
+            <h4> 힌트 </h4>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <p> String의 입출력과 관련된 함수 
+                  <a href="https://www.cplusplus.com/reference/string/string/getline/" target="_blank">getline(isream& is, string& str)</a>을 사용하세요.
+                </p>
+              </li>
+              <li>
+                <p> <a href="https://www.asciitable.com/" target="_blank">ASCII</a>을 참고하세요. 대문자와 소문자의 값 차이는 "32"임을 활용하세요.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 출처 -->
+        <div class="col-md-12">
+          <div class="headline">
+            <h4> 출처 </h4>
+          </div>
+          <div>
+            <a href="https://www.acmicpc.net/problem/4458"> 2011 Pacific Northwest Region Programming Contest No.P </a>
+          </div>
+        </div>
+      </div><!-- /.blog-main -->
+    </div><!-- /.container -->
+
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <script src="react_mouse.js"></script>
+  
+</body></html>
+
+

@@ -1,0 +1,36 @@
+/*
+ * SANGJAE - Main Layout
+ */
+tr a{
+  text-decoration: underline;
+}
+
+.detail_description{
+  margin-left: 20px;
+}
+
+.detail_code {
+    padding: 0px;
+    font-weight: bold;
+    font-family: "Courier New", "Courier", "monospace";
+    font-size: 100%;
+}
+
+.draw_line{
+  border-bottom: 2px solid #888;
+}
+
+.func{
+  padding-bottom: 2em;
+}
+
+.function_detail{
+  padding-top: 3em;
+}
+
+pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0px;
+}
