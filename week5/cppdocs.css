@@ -1,6 +1,39 @@
 /*
  * SANGJAE - Main Layout
  */
+
+.notice_caution{
+  padding: 1em;
+  padding-bottom: 0;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-left-width: 10px;
+  background-color: #f3d3d3f5;
+  border-left-color: #dd160f;
+  margin-bottom: 1em;
+  margin-top: .75em;
+}
+
+.notice{
+  padding: 1em;
+  padding-bottom: 0;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-left-width: 10px;
+  background-color: #eaf2e9;
+  border-left-color: #28a745;
+  margin-bottom: 1em;
+  margin-top: .75em;
+}
+
+.code_example{
+   padding-top: 1em;
+ }
+
+ p{
+  margin: 0;
+}
+
 tr a{
   text-decoration: underline;
 }

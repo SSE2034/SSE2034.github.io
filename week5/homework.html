@@ -67,10 +67,16 @@
 
     <div class="container-fluid center">
      <div class="header">
-         <h4 class="font-weight-bold">stringlib.h</h4>
-         <p>
-            This file exports several useful string functions that are not included in the C++ string library.
-         </p>
+         <h4 class="font-weight-bold">Homework5: Implementing <code>stringlib.hh</code></h4>
+         <p> In this homework, you will implement several useful string functions that are not included in the C++ string library. </p>
+         <p> We offer you the documentations and code examples you wiil build. Read and code them on file.</p>
+         <div class="notice_caution font-weight-bold">
+          <h5 class="font-weight-bold text-danger">Important Cautions</h5>
+          <ul>
+            <li>Do not include other libraries.</li>
+            <li>Do not use a function, <code>std::to_string()</code> of <code>&ltstring&gt</code> library.</li>
+          </ul>
+        </div>
      </div>
 
      <div class="function_table">
@@ -124,7 +130,7 @@
                     <td>Returns a new string in which all lowercase characters have been converted into their uppercase equivalents.</td>
                 </tr>
                 <tr>
-                  <td><a href="#Function:comapreIgnoreCaseType">comapreIgnoreCaseType(string s1, string s2)</a></td>
+                  <td><a href="#Function:compareIgnoreCaseType">compareIgnoreCaseType(string s1, string s2)</a></td>
                   <td>Returns true if <code>s1</code> and <code>s2</code> are equal regardless of the case type.</td>
                 </tr>
                 <tr>
@@ -142,24 +148,58 @@
         <div class="func draw_line">
             <a name="Function:startsWith"></a>
             <pre class="detail_code">bool startsWith(string str, string prefix);<br>bool startsWith(string str, char prefix);</pre>
-            <div class="detail_description">Returns true if the string str starts with the specified prefix, which may be either a string or a character.</div>
-            <div class="detail_description">Example: </div>
+            <div class="detail_description">Returns true if the string <code>str</code> starts with the specified prefix, which may be either a string or a character.</div>
+            <div class="code_example">
+              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello World!&quot;</span>;
+std<span style="color: #333333">::</span>string start_str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hel&quot;</span>;
+
+<span style="color: #008800; font-weight: bold">if</span>(startsWith(str, start_str))
+    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;true&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+<span style="color: #008800; font-weight: bold">else</span>
+    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;false&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+
+<span style="color: #888888">// Output: &quot;true&quot;</span>
+</pre></div>
+
+            </div>
         </div>
 
         <!-- isEndWith -->
         <div class="func draw_line">
             <a name="Function:isEndWith"></a>
             <pre class="detail_code">bool endsWith(string str, string suffix);<br>bool endsWith(string str, char suffix);</pre>
-            <div class="detail_description">Returns true if the string str ends with the specified suffix, which may be either a string or a character.</div>
-            <div class="detail_description">Example: </div>
+            <div class="detail_description">Returns true if the string <code>str</code> ends with the specified suffix, which may be either a string or a character.</div>
+            <div class="code_example">
+              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello World!&quot;</span>;
+std<span style="color: #333333">::</span>string end_str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;rld!&quot;</span>;
+
+<span style="color: #008800; font-weight: bold">if</span>(endsWith(str, end_str))
+    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;true&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+<span style="color: #008800; font-weight: bold">else</span>
+    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;false&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+
+<span style="color: #888888">// Output: &quot;true&quot;</span>
+</pre></div>
+
+            </div>
         </div>
 
         <!-- integerToString -->
         <div class="func draw_line">
             <a name="Function:integerToString"></a>
             <pre class="detail_code">string integerToString(int n);</pre>
-            <div class="detail_description">Converts an integer into the corresponding string of digits. For example, calling integerToString(123) returns the string "123".</div>
-            <div class="detail_description">Example: </div>
+            <div class="detail_description">Converts an integer <code>n</code> into the corresponding string. For example, calling integerToString(123) returns the string "123".</div>
+            <div class="code_example">
+              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">3291850</span>;
+
+std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> integerToString(i);
+
+std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> str <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+
+<span style="color: #888888">// Output: &quot;3291850&quot;</span>
+</pre></div>
+
+            </div>
         </div>
 
         <!-- realToString -->
@@ -167,23 +207,63 @@
             <a name="Function:realToString"></a>
             <pre class="detail_code">string realToString(double d);</pre>
             <div class="detail_description">Converts a floating-point number into the corresponding string form. For example, calling realToString(23.45) returns the string "23.45".</div>
-            <div class="detail_description">Example: </div>
+            <div class="code_example">
+              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">double</span> d <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">3291.1805</span>
+
+std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> realToString(d);
+
+std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> str <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+
+<span style="color: #888888">// Output: &quot;3291.1805&quot; or &quot;3291.1084&quot; etc..</span>
+</pre></div>
+
+            </div>
+            <div class="notice">
+              <h5 class="font-weight-bold text-success">Relaxation of implementation</h5>
+              <p style="color: #212529;"> C++에서 한치의 오차없는 소수값을 갖는것은 불가능 합니다. 어느정도의 오차는 발생할 수 밖에 없습니다. 
+                한치의 오차 없이 문자열로 변환하는것은 난이도가 높아 다음과 같이 조건을 완하합니다. 구현에 참고하시길 바랍니다.</p>
+              <ul>
+                <li>채점시 입력은 소수점 4번째 자리가 최대입니다. 그 보다 더 깊은 수는 테스트하지 않습니다.</li>
+                <li>가장 깊은 소수점 수를 기준으로 -1 ~ +1까지의 오차를 허용합니다. 예를들어 18.05를 변환하는 경우 18.04와 18.06모두 정답으로 인정합니다.</li>
+                <li>자릿수를 반드시 지킬 필요 없습니다. 예를 들어 18.05를 변환할 경우 반드시 소수점 2자리로 끊지않아도 됩니다. "18.0500"도 정답으로 인정합니다.</li>
+              </ul>
+            </div>
         </div>
 
         <!-- stringToInteger -->
         <div class="func draw_line">
             <a name="Function:stringToInteger"></a>
             <pre class="detail_code">int stringToInteger(string str);</pre>
-            <div class="detail_description">Converts a string of digits into an integer. If the string is not a legal integer or contains extraneous characters other than whitespace, stringToInteger calls error with an appropriate message.</div>
-            <div class="detail_description">Example: </div>
+            <div class="detail_description">Converts a string of digits into an integer. Note that you should automatically cast the real type into integer.</div>
+            <div class="code_example">
+            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;3291850.0000&quot;</span>;
+
+<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> stringToInteger(str);
+
+<span style="color: #888888">// Output: 3291850</span>
+</pre></div>
+
+            </div>
         </div>
         
         <!-- stringToReal -->
         <div class="func draw_line">
             <a name="Function:stringToReal"></a>
             <pre class="detail_code">double stringToReal(string str);</pre>
-            <div class="detail_description">Converts a string representing a real number into its corresponding value. If the string is not a legal floating-point number or contains extraneous characters other than whitespace, stringToReal calls error with an appropriate message.</div>
-            <div class="detail_description">Example: </div>
+            <div class="detail_description">Converts a string representing a real number into its corresponding value. </div>
+            <div class="code_example">
+              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;3211.1855465&quot;</span>;
+
+<span style="color: #333399; font-weight: bold">double</span> d <span style="color: #333333">=</span> stringToReal(str);
+
+<span style="color: #888888">// Output: 3211.1855</span>
+</pre></div>
+
+            </div>
+            <div class="notice">
+              <h5 class="font-weight-bold text-success">Relaxation of implementation</h5>
+              <p style="color: #212529;"> 위에서 언급한 <code>realToString()</code> 함수와 똑같이 규제를 완하 합니다. 조건은 동일합니다. </p>
+            </div>
         </div>
 
         <!-- toLowerCase -->
@@ -191,7 +271,17 @@
             <a name="Function:toLowerCase"></a>
             <pre class="detail_code">string toLowerCase(string str);</pre>
             <div class="detail_description">Returns a new string in which all uppercase characters have been converted into their lowercase equivalents.</div>
-            <div class="detail_description">Example: </div>
+            <div class="code_example">
+              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello World!!&quot;</span>;
+
+std<span style="color: #333333">::</span>string new_str <span style="color: #333333">=</span> toLowerCase(str);
+
+std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> new_str <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+
+<span style="color: #888888">// Output:"hello world!!"</span>
+</pre></div>
+
+            </div>
         </div>
 
         <!-- toUpperCase -->
@@ -199,23 +289,62 @@
             <a name="Function:toUpperCase"></a>
             <pre class="detail_code">string toUpperCase(string str);</pre>
             <div class="detail_description">Returns a new string in which all lowercase characters have been converted into their uppercase equivalents.</div>
-            <div class="detail_description">Example: </div>
+            <div class="code_example">
+              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello World!!&quot;</span>;
+
+std<span style="color: #333333">::</span>string new_str <span style="color: #333333">=</span> toUpperCase(str);
+
+std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> new_str <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+
+<span style="color: #888888">// Output:"HELLO WORLD!!"</span>
+</pre></div>
+
+            </div>
         </div>
 
         <!-- equalsIgnoreCase -->
         <div class="func draw_line">
-          <a name="Function:comapreIgnoreCaseType"></a>
-          <pre class="detail_code">bool comapreIgnoreCaseType(string s1, string s2);</pre>
+          <a name="Function:compareIgnoreCaseType"></a>
+          <pre class="detail_code">bool compareIgnoreCaseType(string s1, string s2);</pre>
           <div class="detail_description">Returns true if s1 and s2 are equal regardless of the case type.</div>
-          <div class="detail_description">Example: </div>
+          <div class="code_example"> 
+            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str1 <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello World!!&quot;</span>;
+std<span style="color: #333333">::</span>string str2 <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;HELLO WORLD!!&quot;</span>;
+
+<span style="color: #008800; font-weight: bold">if</span>(compareIgnoreCaseType(str1,str2))
+    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;true&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+<span style="color: #008800; font-weight: bold">else</span>
+    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;false&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+
+<span style="color: #888888">// Output:&quot;true&quot;</span>
+</pre></div>
+
+          </div>
         </div>
 
         <!-- trim -->
         <div class="func draw_line">
             <a name="Function:trim"></a>
-            <pre class="detail_code">vector<string> trim(string str);</pre>
+            <pre class="detail_code">vector&lt;string&gt; trim(string str);</pre>
             <div class="detail_description">Divide the sentence by white space and return the divided strings in form of a string container.</div>
-            <div class="detail_description">Example: </div>
+            <div class="code_example">
+              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello!! My name is Chulsoo.&quot;</span>;
+
+std<span style="color: #333333">::</span>vector<span style="color: #333333">&lt;</span>std<span style="color: #333333">::</span>string<span style="color: #333333">&gt;</span> vec <span style="color: #333333">=</span> trim(str);
+
+<span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>; i<span style="color: #333333">&lt;</span>vec.size(); i<span style="color: #333333">++</span>){
+    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> vec[i] <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
+}
+
+<span style="color: #888888">// Output:</span>
+<span style="color: #888888">// Hello!!</span>
+<span style="color: #888888">// My</span>
+<span style="color: #888888">// name</span>
+<span style="color: #888888">// is</span>
+<span style="color: #888888">// Chulsoo.</span>
+</pre></div>
+
+            </div>
         </div>
 
      </div>
