@@ -2,6 +2,7 @@
  * SANGJAE - Main Layout
  */
 
+ 
 .notice_caution{
   padding: 1em;
   padding-bottom: 0;
@@ -14,9 +15,12 @@
   margin-top: .75em;
 }
 
+.notice ul{
+  margin: 0;
+}
+
 .notice{
   padding: 1em;
-  padding-bottom: 0;
   text-align: left;
   border: 1px solid #ccc;
   border-left-width: 10px;
@@ -30,7 +34,7 @@
    padding-top: 1em;
  }
 
- p{
+p{
   margin: 0;
 }
 
@@ -55,6 +59,10 @@ tr a{
 
 .func{
   padding-bottom: 2em;
+}
+
+.function_table{
+  padding-top: 1em;
 }
 
 .function_detail{

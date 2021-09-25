@@ -68,13 +68,16 @@
     <div class="container-fluid center">
      <div class="header">
          <h4 class="font-weight-bold">Homework5: Implementing <code>stringlib.hh</code></h4>
-         <p> In this homework, you will implement several useful string functions that are not included in the C++ string library. </p>
-         <p> We offer you the documentations and code examples you wiil build. Read and code them on file.</p>
-         <div class="notice_caution font-weight-bold">
+         <p> In this homework, you will implement several useful string functions that are not included in the C++ string library.  </p>
+         <p> We offer you the documentations and code example. Pleas read them carefully and go to implement. </p>
+         <p> For any question, make a <a href="https://github.com/ssal-mem/week5/issues">github issue</a> or contact to TA. </p>
+         <div class="notice_caution">
           <h5 class="font-weight-bold text-danger">Important Cautions</h5>
           <ul>
-            <li>Do not include other libraries.</li>
-            <li>Do not use a function, <code>std::to_string()</code> of <code>&ltstring&gt</code> library.</li>
+            <li>You only need to code on <code>stringlib.cc</code>, while <code>main.cc</code> are just for testing your code. </li>
+            <li>Do not include other libraries, except that TA previously included.</li>
+            <li>Do not use a function, <code>std::to_string()</code> of <code>&ltstring&gt</code> library. If you use the function, your code is not graded.</li>
+            <li>When TA grades your codes, new test-case will be added.</li>
           </ul>
         </div>
      </div>
@@ -219,13 +222,14 @@ std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&
 
             </div>
             <div class="notice">
-              <h5 class="font-weight-bold text-success">Relaxation of implementation</h5>
-              <p style="color: #212529;"> C++에서 한치의 오차없는 소수값을 갖는것은 불가능 합니다. 어느정도의 오차는 발생할 수 밖에 없습니다. 
-                한치의 오차 없이 문자열로 변환하는것은 난이도가 높아 다음과 같이 조건을 완하합니다. 구현에 참고하시길 바랍니다.</p>
+              <h5 class="font-weight-bold text-success">Notice</h5>
               <ul>
-                <li>채점시 입력은 소수점 4번째 자리가 최대입니다. 그 보다 더 깊은 수는 테스트하지 않습니다.</li>
-                <li>가장 깊은 소수점 수를 기준으로 -1 ~ +1까지의 오차를 허용합니다. 예를들어 18.05를 변환하는 경우 18.04와 18.06모두 정답으로 인정합니다.</li>
-                <li>자릿수를 반드시 지킬 필요 없습니다. 예를 들어 18.05를 변환할 경우 반드시 소수점 2자리로 끊지않아도 됩니다. "18.0500"도 정답으로 인정합니다.</li>
+                <li>
+                  <p style="color: #212529;"> C++에서는 모든 Floating 값들이 오차를 갖지 않는 것은 불가능 합니다. 예를 들어 여러분이 <code>double d = 0.8;</code>를 실제로 변수에는 0.8과는 약간 다른 0.800000001 정도가 할당됩니다.
+                 이는 소수점을 2진수로 표현하려다 발생하는 어쩔수 없는 현상입니다. 따라서 조교는 <a href="https://www.h-schmidt.net/FloatConverter/IEEE754.html">IEEE-754 Floating Point Converter</a>에서 오차가 발생하지 않는 경우에 한하여 채점을 수행합니다.
+                 예를 들어 13.125 경우에는 오차가 발생하지 않으나 13.126은 오차가 발생합니다. 조교는 13.125를 사용하지 13.126과 같이 오차가 발생하는 숫자들로는 평가하지 않습니다.</p>
+                </li>
+                <li>자릿수를 지켜주셔야 합니다. 예를들어 18.05를 변환 할때 정확히 string은 "18.05"가 담겨야 합니다. "18.05000"과 같은 것은 감점사항입니다.</li>
               </ul>
             </div>
         </div>
@@ -261,8 +265,8 @@ std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&
 
             </div>
             <div class="notice">
-              <h5 class="font-weight-bold text-success">Relaxation of implementation</h5>
-              <p style="color: #212529;"> 위에서 언급한 <code>realToString()</code> 함수와 똑같이 규제를 완하 합니다. 조건은 동일합니다. </p>
+              <h5 class="font-weight-bold text-success">Notice</h5>
+              <p style="color: #212529;"> 위에서 언급한 <code>realToString()</code> 함수와 같은 내용이 적용됩니다.</p>
             </div>
         </div>
 
