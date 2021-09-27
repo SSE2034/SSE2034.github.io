@@ -112,7 +112,7 @@
                     <td>Perform transportation of matrix <code>A</code>.</td>
                 </tr>
                 <tr>
-                  <td><a href="#Function:matrixToString()">matrixToString(int A[][N])</a></td>
+                  <td><a href="#Function:matrixToString">matrixToString(int A[][N])</a></td>
                   <td>Return a string converted from matrix array.</td>
                 </tr>  
             </tbody>
@@ -125,7 +125,7 @@
         <!-- matEqual -->
         <div class="func draw_line">
             <a name="Function:matEqual"></a>
-            <pre class="detail_code">void matEqual(int A[][N], int B[][N]);</pre>
+            <pre class="detail_code">bool matEqual(int A[][N], int B[][N]);</pre>
             <div class="detail_description">Returns true if two matrix contain the same elements.</div>
             <div class="code_example">
               <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">int</span> A[<span style="color: #0000DD; font-weight: bold">2</span>][<span style="color: #0000DD; font-weight: bold">2</span>] <span style="color: #333333">=</span> {{<span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">2</span>},{<span style="color: #0000DD; font-weight: bold">3</span>,<span style="color: #0000DD; font-weight: bold">4</span>}};
@@ -136,7 +136,7 @@
 <span style="color: #008800; font-weight: bold">else</span>
     std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;Not equal&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
 
-<span style="color: #888888">// Output: &quot;Equal&quot;</span>
+<span style="color: #888888">// Output: Equal</span>
 </pre></div>
 
             </div>
@@ -244,10 +244,18 @@ string str <span style="color: #333333">=</span> matrixToString(A);
 std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> str <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
 
 <span style="color: #888888">// Output:</span>
-<span style="color: #888888">// &quot;{1,2},</span>
-<span style="color: #888888">//  {3,4}&quot;</span>
+<span style="color: #888888">// {1,2},</span>
+<span style="color: #888888">// {3,4}</span>
 </pre></div>
 
+            </div>
+            <div class="notice">
+              <h5 class="font-weight-bold text-success">Notice</h5>
+              <ul>
+                <li><p style="color: #212529;"> Output:은 출력 대상이 아닙니다.</p></li>
+                <li><p style="color: #212529;"> 오해의 소지가 있어서 큰따음표(")를 삭제했습니다. 큰따음표(")는 string에 포함될 대상이 아닙니다.</p></li>
+                <li><p style="color: #212529;"> 중괄호({), 콤마(,), 엔터키(\n) 모두 string에 들어갈 대상입니다. 예시와 똑같이 출력해주세요. </p></li>
+              </ul>
             </div>
         </div>
      </div>
