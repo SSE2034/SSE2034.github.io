@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SSE2034</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.3.1-dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="index.css" rel="stylesheet">
+    <link href="practice.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="blog-header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="title-navbar">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link text-white font-weight-bold" href="#" onclick="location.href='index.html'" id="0"> 
+                  SSE2034 WEEK5 Home
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link text-white font-weight-bold dropdown-toggle" href="#" id="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Practice </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#" onclick="location.href='practice1.html'">Practice1</a>
+                  <a class="dropdown-item" href="#" onclick="location.href='practice2.html'">Practice2</a>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link font-weight-bold text-white" href="#" onclick="location.href='lab.html'" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  LAB
+                </a>
+              </li>
+
+              <li class="nav-item"> 
+                <a class="nav_item nav-link font-weight-bold text-white" href="#" onclick="location.href='homework.html'" id="3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Homework
+                </a>
+              </li>
+
+              <li class="nav-item"> 
+                <a class="nav-link font-weight-bold text-white" href="#" onclick="location.href='guideline.html'" id="4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Submission Guideline
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <div class="container">
+      <div class = "problem_container">
+        <div class="col-md-12">
+            <div class="headline">
+                <h4> 실습 목표 </h4>
+            </div>
+            <div class="practice goal">
+                <p> class를 정의해보고 접근 지정자에 대해 알아본다 <\p>
+            </div>
+        <!-- 문제 -->
+        <div class="col-md-12">
+          <div class="headline">
+            <h4> 문제 (class 정의 및 접근 지정자)</h4>
+          </div>
+          <div class="problem_text1">
+              <p> 1.class로 정의된 student 변수의 lab과 grade를 print하도록 한다.<\p>
+              <p> 첫 번째로, public member function, variable만을 가지고 있는 Student class를 정의하고 사용해본다. <\p>
+              <p> Student class는 member function으로 print_grade() 함수를 갖는다. <\p>
+              <p> Student class는 member variable으로 lab과 hw을 갖는다. <\p>
+              <p> main 함수에서는 input을 받고, class 변수를 선언한다. <\p>
+              <p> '.'을 통해 class의 멤버 변수에 접근하여 값을 대입한다.<\p>
+              <p> Student class의 print_score()함수를 통해, 값을 출력한다.<\p>
+              <p> main function에서 '.'을 통해 멤버 변수에 직접 접근하여 cout을 통해 출력한다.<\p>
+              <p> 이때, 처음 skeleton에 잘못 된 부분이 있는데 이 부분을 고치는 것까지 본 실습이다.<\p>
+          <\div>
+          <div class="problem_text2">
+              <p> 2. class 정의 및 private 접근 지정자. <\p>
+              <p> 멤버 변수를 private으로 만들어 다시 컴파일하여 실행해본다. <\p>
+          <\div>
+          <div class="problem_text3">
+              <p> 3. 접근 지정자가 없을 경우. <\p>
+              <p> 접근 지정자가 없을 경우 어떤 접근 지정자가 default로 되어 있는지 확인해본다. <\p>
+          <\div>
+          <div class="problem_test4">
+              <p> 4. access/mutator function. <\p>
+              <p> 변수를 private로 하고, 함수를 public으로 만든다.
+              <p> access function과 mutator function을 사용하여, main 함수에서도 class의 priavte 값을 획득 및 변경할 수 있도록 한다.<\p>
+          </div>
+        </div>
+        <!-- 입력 -->
+        <div class="col-md-12">
+          <div class="headline">
+            <h4> 입력 </h4>
+          </div>
+          <div class="problem_text">
+            <p>lab과 hw의 score을 나타내는 interger 2개가 주어진다.</p>
+          </div>
+        </div>
+        <!-- 출력  -->
+        <div class="col-md-12">
+          <div class="headline">
+            <h4> 출력 </h4>
+          </div>
+          <div class="problem_text">
+              <p>class함수를 통해 출력하는 것은 (class) 가 붙고, main에서 class 변수에 접근하여 출력하는 것은 (main)이 붙는다.<\p>
+              <p>순서대로 lab과 hw의 score를 나태내는 2개의 integer를 출력한다.<\p>
+          </div>
+        </div>
+        <!-- 입/출력 예시 -->
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <section id="sampleinput1">
+              <div class="headline">
+              <h4>예제 입력 1</h4>
+              </div>
+              <pre class="sampledata" id="sample-input-1">10 9</pre>
+              </section>
+            </div>
+            <div class="col-md-6">
+              <section id="sampleoutput1">
+              <div class="headline">
+              <h4>예제 출력 1</h4>
+              </div>
+              <pre class="sampledata" id="sample-output-1">(class)10 9<br>(main)10 9</pre>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.blog-main -->
+    </div><!-- /.container -->
+
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <script src="react_mouse.js"></script>
+  
+</body></html>
+
+
