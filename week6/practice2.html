@@ -37,7 +37,6 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#" onclick="location.href='practice1.html'">Practice1</a>
                   <a class="dropdown-item" href="#" onclick="location.href='practice2.html'">Practice2</a>
-                  <a class="dropdown-item" href="#" onclick="location.href='practice3.html'">Practice3</a>
                 </div>
               </li>
 
@@ -67,15 +66,37 @@
 
     <div class="container">
       <div class = "problem_container">
+        <div class="col-md-12">
+            <div class="headline">
+                <h4> 실습 목표 </h4>
+            </div>
+            <div class="practice goal">
+                <p> constructor및 ADT에 대해 알아본다.</p>
+            </div>
+        </div>
         <!-- 문제 -->
         <div class="col-md-12">
           <div class="headline">
-            <h4> 문제 (String) </h4>
+            <h4> 문제 (constructor와 ADT)</h4>
           </div>
           <div class="problem_text">
-            <p>
-              문장을 읽은 뒤, 줄의 첫 글자를 대문자로 바꾸는 프로그램을 작성하시오.
-            </p>
+              <p> 5. 조금 더 복잡한 문제로 예를 들도록 한다.<br>
+              이제는, 한명 학생의 성적만을 관리하는 것이 아닌, 학생 여러명을 관리하려고 한다.<br>
+              class의 구성은 이전과 같다.<br>
+              main에서는 가장 처음으로 학생 인원수 N을 받고. 입력 순서대로 학생들의 번호가 지정된다(0~N-1)<br>
+              인원수를 받은 이후, 순차적으로 학생들의 이름, lab성적, hw성적을 입력받는다.
+              이때, 생성자를 이용하여 입력받도록 한다.
+              N명 모두입력이 끝난 이후에는, 학생 한명의 번호를 입력받아 이름과 성적을 출력하도록 한다.
+              </p>
+              <p> 6. default constructor / constructor overloading <br>
+              수강 정정기간에 새로운 학생이 두명 더 들어와서 main 함수에 new_student1,2를 추가한다.
+              이때, new student1는 default constructor를 사용하여 추가한다. 성적은 0으로 초기화된다.
+              또한, new student2는 constructor overloading을 하여 이름만을 인자로 받도록 하여 추가한다. 성적은 0으로 초기화된다.
+              </p>
+              <p> 7. ADT(Abstract data type)<br>
+              지금까지 한 내용들을 ADT로 구현할 수 있도록 한다<br>
+              지금까지 입력한 내용에서, class에 함수 descirption은 밖으로 빼고, 정의만 남겨놓도록 한다.
+              </p>
           </div>
         </div>
         <!-- 입력 -->
@@ -84,9 +105,7 @@
             <h4> 입력 </h4>
           </div>
           <div class="problem_text">
-            <p>
-              첫째 줄에 줄의 수 N이 주어진다. 다음 N개의 줄에는 문장이 주어진다. 각 문장에 들어있는 글자의 수는 30을 넘지 않는다. 모든 줄의 첫 번째 글자는 알파벳이다.
-            </p>
+            <p>인원수를 나타내는 integer X가 주어진 후, 이름, lab성적, hw성적을 받는 X개의 line이 주어진다. 그 후, print할 학생의 number이 주어진다.</p>
           </div>
         </div>
         <!-- 출력  -->
@@ -95,9 +114,7 @@
             <h4> 출력 </h4>
           </div>
           <div class="problem_text">
-            <p>
-              각 줄의 첫글자를 대문자로 바꾼뒤 출력한다.
-            </p>
+              <p>마지막 input으로 주어진 number에 해당하는 학생의 이름, lab 성적, hw 성적이 출력된다.</p>
           </div>
         </div>
         <!-- 입/출력 예시 -->
@@ -108,7 +125,7 @@
               <div class="headline">
               <h4>예제 입력 1</h4>
               </div>
-              <pre class="sampledata" id="sample-input-1">5<br>powdered Toast Man<br>skeletor<br>Electra Woman and Dyna Girl<br>she-Ra Princess of Power<br>darth Vader</pre>
+              <pre class="sampledata" id="sample-input-1">3<br>song 10 9<br>kim 9 9<br>lee 8 10<br>2</pre>
               </section>
             </div>
             <div class="col-md-6">
@@ -116,36 +133,9 @@
               <div class="headline">
               <h4>예제 출력 1</h4>
               </div>
-              <pre class="sampledata" id="sample-output-1">Powdered Toast Man<br>Skeletor<br>Electra Woman and Dyna Girl<br>She-Ra Princess of Power<br>Darth Vader</pre>
+              <pre class="sampledata" id="sample-output-1">lee 8 10</pre>
               </section>
             </div>
-          </div>
-        </div>
-        <!-- 힌트 -->
-        <div class="col-md-12">
-          <div class="headline">
-            <h4> 힌트 </h4>
-          </div>
-          <div>
-            <ul>
-              <li>
-                <p> String의 입출력과 관련된 함수 
-                  <a href="https://www.cplusplus.com/reference/string/string/getline/" target="_blank">getline(isream& is, string& str)</a>을 사용하세요.
-                </p>
-              </li>
-              <li>
-                <p> <a href="https://www.asciitable.com/" target="_blank">ASCII</a>을 참고하세요. 대문자와 소문자의 값 차이는 "32"임을 활용하세요.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- 출처 -->
-        <div class="col-md-12">
-          <div class="headline">
-            <h4> 출처 </h4>
-          </div>
-          <div>
-            <a href="https://www.acmicpc.net/problem/4458"> 2011 Pacific Northwest Region Programming Contest No.P </a>
           </div>
         </div>
       </div><!-- /.blog-main -->
