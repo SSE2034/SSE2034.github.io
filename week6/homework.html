@@ -29,7 +29,7 @@
             <ul class="navbar-nav">
               <li class="nav-item active">
                 <a class="nav-link text-white font-weight-bold" href="#" onclick="location.href='index.html'" id="0"> 
-                  SSE2034 WEEK5 Home
+                  SSE2034 WEEK6 Home
                 </a>
               </li>
               <li class="nav-item dropdown">
@@ -37,7 +37,6 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#" onclick="location.href='practice1.html'">Practice1</a>
                   <a class="dropdown-item" href="#" onclick="location.href='practice2.html'">Practice2</a>
-                  <a class="dropdown-item" href="#" onclick="location.href='practice3.html'">Practice3</a>
                 </div>
               </li>
 
@@ -67,297 +66,117 @@
 
     <div class="container-fluid center">
      <div class="header">
-         <h4 class="font-weight-bold">Homework5: Implementing <code>stringlib.hh</code></h4>
-         <p> In this homework, you will implement several useful string functions that are not included in the C++ string library.  </p>
+         <h4 class="font-weight-bold">Lab6: Grade management system</h4>
+         <p> you would like to write a program that manages your market<br>
+         in your program, thete has several operations like table located below.<br>
+         you can freely implement class functions and variables<br>
          <p> We offer you the documentations and code example. Pleas read them carefully and go to implement. </p>
-         <p> For any question, make a <a href="https://github.com/ssal-mem/week5/issues">github issue</a> or contact to TA. </p>
-         <div class="notice_caution">
-          <h5 class="font-weight-bold text-danger">Important Cautions</h5>
-          <ul>
-            <li>You only need to code on <code>stringlib.cc</code>, while <code>main.cc</code> are just for testing your code. </li>
-            <li>Do not include other libraries, except that TA previously included.</li>
-            <li>Do not use a function, <code>std::to_string()</code> of <code>&ltstring&gt</code> library. If you use the function, your code is not graded.</li>
-            <li>Do not use a function, <code>std::stoi()</code> of <code>&ltstring&gt</code> library. If you use the function, your code is not graded.</li>
-            <li>When TA grades your codes, new test-case will be added.</li>
-          </ul>
-        </div>
+         <p> For any question, make a <a href="https://github.com/ssal-mem/week6/issues">github issue</a> or contact to TA. </p>
      </div>
 
+    <div class="container">
      <div class="function_table">
         <table class="table-sm table-bordered">
             <thread>
                 <tr>
-                    <th>Function Name</th>
+                    <th>Operation Name</th>
                     <th>Descriptions</th>
                 </tr>
             </thread>
             <tbody>
                 <tr>
-                    <td><a href="#Function:startsWith">startsWith(string str, string prefix)</a></td>
-                    <td>Returns true if the string str starts with a specific string.</td>
+                  <td><a href="#Operation:buy">add [name]</a></td>
+                  <td>Add students in your program.<br>initialize all of the score(10 lab/hw, prj, exam) using constructor</td>
                 </tr>
                 <tr>
-                    <td><a href="#Function:startsWith">startsWith(string str, char prefix)</a></td>
-                    <td>Returns true if the string str starts with a specific character.</td>
+                    <td><a href="#Operation:setlab">setlab [name] [weekN] [score]</a></td>
+                    <td>Enter the [weekN]th lab score of the student corresponding to the name.<br>
+                    there are total of 10 labs from week0 to week9</td>
                 </tr>
                 <tr>
-                    <td><a href="#Function:endsWith">endsWith(string str, string suffix)</a></td>
-                    <td>Returns true if the string str ends with a speicific string.</td>
+                    <td><a href="#Operation:sethw">sethw [name] [weekN] [score]</a></td>
+                    <td>Enter the [weekN]th hw score of the student corresponding to the name.<br>
+                    there are total of 10 homeworks from week0 to week9</td>
                 </tr>
                 <tr>
-                    <td><a href="#Function:endsWith">endsWith(string str, char suffix)</a></td>
-                    <td>Returns true if the string str ends with a speicific character.</td>
+                    <td><a href="#Operation:setprj">setprj [name] [score]</a></td>
+                    <td>Enter the project score of the student corresponding to the name.</td>
                 </tr>
                 <tr>
-                    <td><a href="#Function:integerToString">integerToString(int n)</a></td>
-                    <td>Converts an integer into the corresponding string of digits.</td>
+                    <td><a href="#Operation:setexam">setprj [name] [score]</a></td>
+                    <td>Enter the exam score of the student corresponding to the name.</td>
+               </tr>
+                <tr>
+                    <td><a href="#Opeartion:setscoreweight">setscoreweight [labratio] [hwratio] [prjratio] [examratio]</a></td>
+                    <td>Determine the weight for each evaluation itmes.<br>
+                        weight is integer type. The sum of given weight should be 10.<br>
+                        fist initialize by [1 2 3 4]
+                    </td>
                 </tr>
                 <tr>
-                    <td><a href="#Function:realToString">realToString(double d)</a></td>
-                    <td>Converts a floating-point number into the corresponding string form.</td>
+                    <td><a href="#Operation:printscore">printscore [name]</a></td>
+                    <td>Print the total score of the student corresponding to the name.</td>
                 </tr>
                 <tr>
-                    <td><a href="#Function:stringToInteger">stringToInteger(string str)</a></td>
-                    <td>Converts a string of digits into an integer.</td>
-                </tr>
-                <tr>
-                    <td><a href="#Function:stringToReal">stringToReal(string str)</a></td>
-                    <td>Converts a string representing a real number into its corresponding value.</td>
-                </tr>
-
-                <tr>
-                    <td><a href="#Function:toLowerCase">toLowerCase(string str)</a></td>
-                    <td>Returns a new string in which all uppercase characters have been converted into their lowercase equivalents.</td>
-                </tr>
-                <tr>
-                    <td><a href="#Function:toUpperCase">toUpperCase(string str)</a></td>
-                    <td>Returns a new string in which all lowercase characters have been converted into their uppercase equivalents.</td>
-                </tr>
-                <tr>
-                  <td><a href="#Function:compareIgnoreCaseType">compareIgnoreCaseType(string s1, string s2)</a></td>
-                  <td>Returns true if <code>s1</code> and <code>s2</code> are equal regardless of the case type.</td>
-                </tr>
-                <tr>
-                    <td><a href="#Function:trim">trim(string str)</a></td>
-                    <td>Return a new vector container which contains each strings of input sentence <code>str</code>. </td>
-                </tr>
+                  <td><a href="#Operation:printscoredetaail">printscoredetail [name]</a></td>
+                  <td>Print the score of the student in detail corresponding to the name.<br>
+                      Print all of the lab score, homework score, project score, exam score.
+                  </td>
+                </tr>  
             </tbody>
         </table>
      </div>
-
-     
-     <div class="function_detail">
-        <h4 class="font-weight-bold draw_line"> Function Detail </h4>
-        <!-- startsWith -->
-        <div class="func draw_line">
-            <a name="Function:startsWith"></a>
-            <pre class="detail_code">bool startsWith(string str, string prefix);<br>bool startsWith(string str, char prefix);</pre>
-            <div class="detail_description">Returns true if the string <code>str</code> starts with the specified prefix, which may be either a string or a character.</div>
-            <div class="code_example">
-              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello World!&quot;</span>;
-std<span style="color: #333333">::</span>string start_str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hel&quot;</span>;
-
-<span style="color: #008800; font-weight: bold">if</span>(startsWith(str, start_str))
-    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;true&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-<span style="color: #008800; font-weight: bold">else</span>
-    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;false&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-
-<span style="color: #888888">// Output: &quot;true&quot;</span>
-</pre></div>
-
-            </div>
-        </div>
-
-        <!-- isEndWith -->
-        <div class="func draw_line">
-            <a name="Function:isEndWith"></a>
-            <pre class="detail_code">bool endsWith(string str, string suffix);<br>bool endsWith(string str, char suffix);</pre>
-            <div class="detail_description">Returns true if the string <code>str</code> ends with the specified suffix, which may be either a string or a character.</div>
-            <div class="code_example">
-              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello World!&quot;</span>;
-std<span style="color: #333333">::</span>string end_str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;rld!&quot;</span>;
-
-<span style="color: #008800; font-weight: bold">if</span>(endsWith(str, end_str))
-    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;true&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-<span style="color: #008800; font-weight: bold">else</span>
-    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;false&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-
-<span style="color: #888888">// Output: &quot;true&quot;</span>
-</pre></div>
-
-            </div>
-        </div>
-
-        <!-- integerToString -->
-        <div class="func draw_line">
-            <a name="Function:integerToString"></a>
-            <pre class="detail_code">string integerToString(int n);</pre>
-            <div class="detail_description">Converts an integer <code>n</code> into the corresponding string. For example, calling integerToString(123) returns the string "123".</div>
-            <div class="code_example">
-              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">3291850</span>;
-
-std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> integerToString(i);
-
-std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> str <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-
-<span style="color: #888888">// Output: &quot;3291850&quot;</span>
-</pre></div>
-
-            </div>
-        </div>
-
-        <!-- realToString -->
-        <div class="func draw_line">
-            <a name="Function:realToString"></a>
-            <pre class="detail_code">string realToString(double d);</pre>
-            <div class="detail_description">Converts a floating-point number into the corresponding string form. For example, calling realToString(23.45) returns the string "23.45".</div>
-            <div class="code_example">
-              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">double</span> d <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">3291.1805</span>
-
-std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> realToString(d);
-
-std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> str <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-
-<span style="color: #888888">// Output: &quot;3291.1805&quot; or &quot;3291.1084&quot; etc..</span>
-</pre></div>
-
-            </div>
-            <div class="notice">
-              <h5 class="font-weight-bold text-success">Notice</h5>
-              <ul>
-                <li>
-                  <p style="color: #212529;"> C++에서는 모든 Floating 값들이 오차를 갖지 않는 것은 불가능 합니다. 예를 들어 여러분이 <code>double d = 0.8;</code>를 실제로 변수에는 0.8과는 약간 다른 0.800000001 정도가 할당됩니다.
-                 이는 소수점을 2진수로 표현하려다 발생하는 어쩔수 없는 현상입니다. 따라서 조교는 <a href="https://www.h-schmidt.net/FloatConverter/IEEE754.html">IEEE-754 Floating Point Converter</a>에서 오차가 발생하지 않는 경우에 한하여 채점을 수행합니다.
-                 예를 들어 13.125 경우에는 오차가 발생하지 않으나 13.126은 오차가 발생합니다. 조교는 13.125를 사용하지 13.126과 같이 오차가 발생하는 숫자들로는 평가하지 않습니다.</p>
-                </li>
-                <li>자릿수를 지켜주셔야 합니다. 예를들어 18.05를 변환 할때 정확히 string은 "18.05"가 담겨야 합니다. "18.05000"과 같은 것은 감점사항입니다.</li>
-              </ul>
-            </div>
-        </div>
-
-        <!-- stringToInteger -->
-        <div class="func draw_line">
-            <a name="Function:stringToInteger"></a>
-            <pre class="detail_code">int stringToInteger(string str);</pre>
-            <div class="detail_description">Converts a string of digits into an integer. Note that you should automatically cast the real type into integer.</div>
-            <div class="code_example">
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;3291850.0000&quot;</span>;
-
-<span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> stringToInteger(str);
-
-<span style="color: #888888">// Output: 3291850</span>
-</pre></div>
-
-            </div>
-            <div class="notice">
-              <h5 class="font-weight-bold text-success">Notice</h5>
-              <p style="color: #212529;"> <code>std::string str = "123"</code>와 수 뿐만 아니라 <code>std::string str = "123.125"</code>와 같은 실수또한 입력으로 들어올수 있음을 유의해 주세요.</p>
-            </div>
-        </div>
-        
-        <!-- stringToReal -->
-        <div class="func draw_line">
-            <a name="Function:stringToReal"></a>
-            <pre class="detail_code">double stringToReal(string str);</pre>
-            <div class="detail_description">Converts a string representing a real number into its corresponding value. </div>
-            <div class="code_example">
-              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;3211.125&quot;</span>;
-
-<span style="color: #333399; font-weight: bold">double</span> d <span style="color: #333333">=</span> stringToReal(str);
-
-<span style="color: #888888">// Output: 3211.125</span>
-</pre></div>
-
-            </div>
-            <div class="notice">
-              <h5 class="font-weight-bold text-success">Notice</h5>
-              <p style="color: #212529;"> 위에서 언급한 <code>realToString()</code> 함수와 같은 내용이 적용됩니다.</p>
-            </div>
-        </div>
-
-        <!-- toLowerCase -->
-        <div class="func draw_line">
-            <a name="Function:toLowerCase"></a>
-            <pre class="detail_code">string toLowerCase(string str);</pre>
-            <div class="detail_description">Returns a new string in which all uppercase characters have been converted into their lowercase equivalents.</div>
-            <div class="code_example">
-              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello World!!&quot;</span>;
-
-std<span style="color: #333333">::</span>string new_str <span style="color: #333333">=</span> toLowerCase(str);
-
-std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> new_str <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-
-<span style="color: #888888">// Output:"hello world!!"</span>
-</pre></div>
-
-            </div>
-        </div>
-
-        <!-- toUpperCase -->
-        <div class="func draw_line">
-            <a name="Function:toUpperCase"></a>
-            <pre class="detail_code">string toUpperCase(string str);</pre>
-            <div class="detail_description">Returns a new string in which all lowercase characters have been converted into their uppercase equivalents.</div>
-            <div class="code_example">
-              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello World!!&quot;</span>;
-
-std<span style="color: #333333">::</span>string new_str <span style="color: #333333">=</span> toUpperCase(str);
-
-std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> new_str <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-
-<span style="color: #888888">// Output:"HELLO WORLD!!"</span>
-</pre></div>
-
-            </div>
-        </div>
-
-        <!-- equalsIgnoreCase -->
-        <div class="func draw_line">
-          <a name="Function:compareIgnoreCaseType"></a>
-          <pre class="detail_code">bool compareIgnoreCaseType(string s1, string s2);</pre>
-          <div class="detail_description">Returns true if s1 and s2 are equal regardless of the case type.</div>
-          <div class="code_example"> 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str1 <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello World!!&quot;</span>;
-std<span style="color: #333333">::</span>string str2 <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;HELLO WORLD!!&quot;</span>;
-
-<span style="color: #008800; font-weight: bold">if</span>(compareIgnoreCaseType(str1,str2))
-    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;true&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-<span style="color: #008800; font-weight: bold">else</span>
-    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> <span style="background-color: #fff0f0">&quot;false&quot;</span> <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-
-<span style="color: #888888">// Output:&quot;true&quot;</span>
-</pre></div>
-
-          </div>
-        </div>
-
-        <!-- trim -->
-        <div class="func draw_line">
-            <a name="Function:trim"></a>
-            <pre class="detail_code">vector&lt;string&gt; trim(string str);</pre>
-            <div class="detail_description">Divide the sentence by white space and return the divided strings in form of a string container.</div>
-            <div class="code_example">
-              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">std<span style="color: #333333">::</span>string str <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;Hello!! My name is Chulsoo.&quot;</span>;
-
-std<span style="color: #333333">::</span>vector<span style="color: #333333">&lt;</span>std<span style="color: #333333">::</span>string<span style="color: #333333">&gt;</span> vec <span style="color: #333333">=</span> trim(str);
-
-<span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>; i<span style="color: #333333">&lt;</span>vec.size(); i<span style="color: #333333">++</span>){
-    std<span style="color: #333333">::</span>cout <span style="color: #333333">&lt;&lt;</span> vec[i] <span style="color: #333333">&lt;&lt;</span> std<span style="color: #333333">::</span>endl;
-}
-
-<span style="color: #888888">// Output:</span>
-<span style="color: #888888">// Hello!!</span>
-<span style="color: #888888">// My</span>
-<span style="color: #888888">// name</span>
-<span style="color: #888888">// is</span>
-<span style="color: #888888">// Chulsoo.</span>
-</pre></div>
-
-            </div>
-        </div>
-
-     </div>
     </div>
+
+     <div class="col-md-12">
+         <div class="headline">
+             <h4> 입력 </h4>
+         </div>
+         <div class="problem_text">
+             <p> 프로그램을 실행하면 operation을 받기 위한 대기 상태가 된다.<br>
+             operation과 해당하는 input들이 입력되면, 해당 내용을 수행한다.<br>
+             exit이 입력되기 전까지 계속해서 반복적으로 operation이 수행되며, exit이 입력되면 프로그램이 종료된다.
+             </p>
+         </div>
+     </div>
+
+     <div class="col-md-12">
+         <div class="headline">
+             <h4> 출력 </h4>
+         </div>
+         <div class="problem_text">
+             <p> printscore, printscoredetail에 의한 출력이 나온다. </p>
+             <p class="text-danger"> 이전 과제들과 마찬가지로, 출력시 newline이 포함되면 안된다. </p> 
+         </div>
+     </div>
+
+     <div class="col-md-12">
+         <div class="row">
+             <div class="col-md-6">
+                 <section id="sampleinput1">
+                     <div class="headline">
+                         <h4> 예제 입력1</h4>
+                     </div>
+                     <pre class="sampledata" id="sample-input-1">add yuseok<br>setlab yuseok 0 10<br>set yuseok 1 9<br>
+                     setprj yuseok 8<br>setexam yuseok 9<br> printscore yuseok<br>printscoredetail yuseok<br>
+                     setgraderatio 1 1 4 4<br>printscore yuseok
+                     </pre>
+                 </section>
+             </div>
+             <div class="col-md-6">
+                 <section id="sampleoutput1">
+                     <div class="headline">
+                         <h4> 예제 출력1</h4>
+                     </div>
+                     <pre class="sampledata" id="sample-output-1">99 10 9 0 0 0 0 0 0 0 0 10 0 0 0 0 0 0 0 0 0 8 9 97</pre>
+                 </section>
+             </div>
+         </div>
+     </div>
+
+
+
+
 
 
     <!-- Bootstrap core JavaScript
