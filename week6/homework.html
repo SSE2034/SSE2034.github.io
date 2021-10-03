@@ -66,17 +66,16 @@
 
     <div class="container-fluid center">
      <div class="header">
-         <h4 class="font-weight-bold">Lab6: Grade management system</h4>
-         <p> you would like to write a program that manages the scores for assignments and exams for each student<br>
+         <h4 class="font-weight-bold">Homework6: POS system</h4>
+         <p> you would like to write a program that manages your market<br>
          in your program, thete has several operations like table located below.<br>
-         when you save your student object, you can use vector container as in practice.<br>
          you can freely implement class functions and variables<br>
          <p> We offer you the documentations and code example. Pleas read them carefully and go to implement. </p>
          <p> For any question, make a <a href="https://github.com/ssal-mem/week6/issues">github issue</a> or contact to TA. </p>
      </div>
 
      <div class="function_table">
-        <h4 class="font-weight-bold draw_line"> Funtion table </h4>
+        <h4 class="font-weight-bold draw_line"> Funtion table</h4>
         <table class="table-sm table-bordered">
             <thread>
                 <tr>
@@ -86,55 +85,50 @@
             </thread>
             <tbody>
                 <tr>
-                  <td><a href="#Operation:add">add [name]</a></td>
-                  <td>Add students in your program.<br>initialize all of the score(10 lab/hw, prj, exam) using constructor</td>
+                  <td><a>buy [item_name] [item_num] [price] [margin]</a></td>
+                  <td>Buy items.<br>
+                      Set the purchased price and margin using constructor.<br>
+                      Take the totally purchased price out of my balance.<br>
+                      If you buy items over your balance, print "can't buy".<br>
+                      When buying the same item, a new price and margin are set. and the item remainings is added.
+                  </td>
                 </tr>
                 <tr>
-                    <td><a href="#Operation:setlab">setlab [name] [weekN] [score]</a></td>
-                    <td>Enter the [weekN]th lab score of the student corresponding to the name.<br>
-                    there are total of 10 labs from week0 to week9</td>
-                </tr>
-                <tr>
-                    <td><a href="#Operation:sethw">sethw [name] [weekN] [score]</a></td>
-                    <td>Enter the [weekN]th hw score of the student corresponding to the name.<br>
-                    there are total of 10 homeworks from week0 to week9</td>
-                </tr>
-                <tr>
-                    <td><a href="#Operation:setprj">setprj [name] [score]</a></td>
-                    <td>Enter the project score of the student corresponding to the name.</td>
-                </tr>
-                <tr>
-                    <td><a href="#Operation:setexam">setprj [name] [score]</a></td>
-                    <td>Enter the exam score of the student corresponding to the name.</td>
-               </tr>
-                <tr>
-                    <td><a href="#Opeartion:setscoreweight">setscoreweight [labratio] [hwratio] [prjratio] [examratio]</a></td>
-                    <td>Determine the weight for each evaluation itmes.<br>
-                        weight is integer type. The sum of given weight should be 10.<br>
-                        fist initialize by [1 2 3 4]
+                    <td><a>sell [item_name] [item_num]</a></td>
+                    <td>Sell items.<br>
+                        Change the remaining item number.<br>
+                        Add the value in the balance(selling price is price+margin).<br>
+                        If your item doesn't exist, print "not exist".<br>
+                        If you sell items over your item remainings, print "can't sell".
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="#Operation:printscore">printscore [name]</a></td>
-                    <td>Print the total score of the student corresponding to the name.</td>
+                    <td><a>cehck [item_name]</a></td>
+                    <td>Print item number(remainings), sell_price(price+margin)<br>
+                    If your item doesn't exist, print "not exist".</td>
                 </tr>
                 <tr>
-                  <td><a href="#Operation:printscoredetaail">printscoredetail [name]</a></td>
-                  <td>Print the score of the student in detail corresponding to the name.<br>
-                      Print all of the lab score, homework score, project score, exam score.
-                  </td>
-                </tr>  
+                    <td><a>balance</a></td>
+                    <td>Print your balance.</td>
+                </tr>
+                <tr>
+                    <td><a>exit</a></td>
+                    <td>Print totally earned money.<br>
+                        If there is loss, use "-"/<br>
+                        quit your program.
+                    </td>
+               </tr>
             </tbody>
         </table>
      </div>
 
-     <div class="container">
      <div class="col-md-12">
          <div class="headline">
              <h4> 입력 </h4>
          </div>
          <div class="problem_text">
-             <p> 프로그램을 실행하면 operation을 받기 위한 대기 상태가 된다.<br>
+             <p> 프로그램을 실행하면 int형의 잔고를 입력받는다.<br>
+             그 후, operation을 받기 위한 대기 상태가 된다.<br>
              operation과 해당하는 input들이 입력되면, 해당 내용을 수행한다.<br>
              exit이 입력되기 전까지 계속해서 반복적으로 operation이 수행되며, exit이 입력되면 프로그램이 종료된다.
              </p>
@@ -146,7 +140,7 @@
              <h4> 출력 </h4>
          </div>
          <div class="problem_text">
-             <p> printscore, printscoredetail에 의한 출력이 나온다. </p>
+             <p> cehck, balance, exit에 의한 출력이 나온다. </p>
              <p class="text-danger"> 이전 과제들과 마찬가지로, 출력시 newline이 포함되면 안된다. </p> 
          </div>
      </div>
@@ -158,9 +152,7 @@
                      <div class="headline">
                          <h4> 예제 입력1</h4>
                      </div>
-                     <pre class="sampledata" id="sample-input-1">add yuseok<br>setlab yuseok 0 10<br>set yuseok 1 9<br>
-                     setprj yuseok 8<br>setexam yuseok 9<br> printscore yuseok<br>printscoredetail yuseok<br>
-                     setgraderatio 1 1 4 4<br>printscore yuseok
+                     <pre class="sampledata" id="sample-input-1">1000000<br>buy bottle 100 500 1000<br>check bottle<br>balance<br>buy cup 100 400 1100<br>check cup<br>balance<br>sell bottle 50<br>sell bottle 100<br>balance<br>cehck bottle<br>buy basket 500 5000 1000<br> check basket<br>sell basket 100<br>exit
                      </pre>
                  </section>
              </div>
@@ -169,12 +161,11 @@
                      <div class="headline">
                          <h4> 예제 출력1</h4>
                      </div>
-                     <pre class="sampledata" id="sample-output-1">99 10 9 0 0 0 0 0 0 0 0 10 0 0 0 0 0 0 0 0 0 8 9 97</pre>
+                     <pre class="sampledata" id="sample-output-1">100 1500 950000 100 1500 910000 985000 can't sell 985000 50 1500 can't buy not exist not exist -15000</pre>
                  </section>
              </div>
          </div>
      </div>
- </div>
 
 
 

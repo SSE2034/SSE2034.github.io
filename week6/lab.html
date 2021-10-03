@@ -66,16 +66,17 @@
 
     <div class="container-fluid center">
      <div class="header">
-         <h4 class="font-weight-bold">Lab6: Grade management system</h4>
+         <h4 class="font-weight-bold">Homework6: POS system</h4>
          <p> you would like to write a program that manages the scores for assignments and exams for each student<br>
          in your program, thete has several operations like table located below.<br>
-         when you save your student object, you can use vector container as in practice.<br>
+         When you save your student object, you can use vector container.<br>
          you can freely implement class functions and variables<br>
          <p> We offer you the documentations and code example. Pleas read them carefully and go to implement. </p>
          <p> For any question, make a <a href="https://github.com/ssal-mem/week6/issues">github issue</a> or contact to TA. </p>
      </div>
 
      <div class="function_table">
+        <h4 class="font-weight-bold draw_line"> Funtion table</h4>
         <table class="table-sm table-bordered">
             <thread>
                 <tr>
@@ -86,7 +87,9 @@
             <tbody>
                 <tr>
                   <td><a href="#Operation:add">add [name]</a></td>
-                  <td>Add students in your program.<br>initialize all of the score(10 lab/hw, prj, exam) using constructor</td>
+                  <td>Add students in your program<br>
+                      initiallize all of the score(10 lab/hw, prj, exam) using constructor to 0<br>
+                  </td>
                 </tr>
                 <tr>
                     <td><a href="#Operation:setlab">setlab [name] [weekN] [score]</a></td>
@@ -127,7 +130,6 @@
         </table>
      </div>
 
-     <div class="container">
      <div class="col-md-12">
          <div class="headline">
              <h4> 입력 </h4>
@@ -157,9 +159,7 @@
                      <div class="headline">
                          <h4> 예제 입력1</h4>
                      </div>
-                     <pre class="sampledata" id="sample-input-1">add yuseok<br>setlab yuseok 0 10<br>set yuseok 1 9<br>
-                     setprj yuseok 8<br>setexam yuseok 9<br> printscore yuseok<br>printscoredetail yuseok<br>
-                     setgraderatio 1 1 4 4<br>printscore yuseok
+                     <pre class="sampledata" id="sample-input-1">add yuseok<br>setlab yuseok 0 10<br>set yuseok 1 9<br>setprj yuseok 8<br>setexam yuseok 9<br> printscore yuseok<br>printscoredetail yuseok<br>setgraderatio 1 1 4 4<br>printscore yuseok
                      </pre>
                  </section>
              </div>
@@ -173,7 +173,6 @@
              </div>
          </div>
      </div>
- </div>
 
 
 
