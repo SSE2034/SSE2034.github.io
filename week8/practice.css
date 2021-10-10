@@ -2,6 +2,16 @@
  * SANGJAE - Main Layout
  */
 
+
+
+p{
+  margin: 0 0 10px 0;
+}
+
+ul{
+  margin: 0 0 10px 0;
+}
+
  .problem_container{
      margin-bottom: 50px;
  }

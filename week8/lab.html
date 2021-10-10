@@ -30,13 +30,13 @@
               
               <li class="nav-item active">
                 <a class="nav-link text-white font-weight-bold" href="#" onclick="location.href='index.html'" id="0"> 
-                  SSE2034 WEEK5 Home
+                  SSE2034 WEEK8 Home
                 </a>
               </li>
 
               <li class="nav-item">
                 <a class="nav-link font-weight-bold text-white" href="#" onclick="location.href='practice.html'" id="1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Pratice
+                  Practice
                 </a>
               </li>
 
@@ -64,18 +64,18 @@
         <!-- 문제 -->
         <div class="col-md-12">
           <div class="headline">
-            <h4> 문제 (Array)</h4>
+            <h4> 문제 (Lab) </h4>
           </div>
           <div class="problem_text">
             <p>
-              아래는 2020년 3월에 개정된 삼성반도체장학금의 지급 규정 시행 세칙 이다.
+              아래는 성균관대학교 반도체시스템공학과 학생을 대상으로 하는 삼성반도체장학금의 지급 규정 시행 세칙(2020.03.01 개정안) 이다.
             </p>
             <ul>
               <li>삼성반도체장학금은 본교 신입학 특기자전형 합격자 중 반도체계열 입학자 
                 및 반도체시스템공학과 운영위원회에서 별도로 정한 자에게 지급한다. </li>
-              <li> 삼성반도체장학생에게는 다음 각 호와 같이 장학금을 지급한다. 1. 2018학년도 이전 입학생은 수업연한 동안 등록금 전액을 지급한다.
+              <li> 삼성반도체장학생에게는 다음 각 호와 같이 장학금을 지급한다. 1. 2019학년도 이전 입학생은 수업연한(8학기) 동안 등록금 전액을 지급한다.
                 2. 2019학년도 이후 입학생은 2년(4개 학기)동안 등록금 전액을 지급한다.</li>
-              <li> 삼성반도체장학생이 계속 장학금을 수혜하기 위해서는 직전학기 이수학점이 과락 없이 12학점 이상이
+              <li> 삼성반도체장학생이 계속 장학금을 수혜하기 위해서는 직전학기 이수학점이 과락 없이(F학점 없이) 12학점 이상이
                 고(최종학기 직전학기는 9학점), 평점평균이 3.00 이상이어야 한다.</li>
               <li> 장학금 지급이 중지된 자가 그 다음 학기에 계속 지급기준을 회복한 경우에는 장학금 
                 지급을 계속한다.</li>
@@ -84,8 +84,15 @@
             </ul>
           </div>
           <p>
-            10명의 학생에 대한 입력 정보를 바탕으로 다음학기에 대한 장학금 지급 여부를 출력하는 프로그램을 작성하시오.
+            10명의 학생에 대한 입력 정보를 바탕으로 다음학기에 대한 삼성반도체장학금 지급 여부를 출력하는 프로그램을 작성하시오.
+            각 학생의 정보는 한줄씩 <span class="font-weight-bold"> (학번) (현 이수 학기) (이수과목 개수) (학점/이수학점) (지난학기 장학금 지급 여부) </span>형식으로 정보가 차례로 들어온다.  
           </p>
+
+          <p>
+            예를 들어, 지난학기 장학금 지급 기준을 충족한 현 4학기(2학년 2학기)에 재학중인 17학번 학생의 정보는 다음과 같이 나타낸다. 
+            <span class="font-italic font-weight-bold"> 17 4 4 A+/3 A+/2 A/3 B+/3 T </span>.
+          </p>
+            
         </div>
         <!-- 입력 -->
         <div class="col-md-12">
@@ -93,9 +100,33 @@
             <h4> 입력 </h4>
           </div>
           <div class="problem_text">
-            <p>
-              첫째 줄부터 열번째 줄 까지 숫자가 한 줄에 하나씩 주어진다. 이 숫자는 1,000보다 작거나 같고, 음이 아닌 정수이다.
-            </p>
+              <table class="table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td>학번</td>
+                        <td>12~20의 정수 값. </td>
+                    </tr>
+                    <tr>
+                        <td>현 이수 학기</td>
+                        <td>1~8의 정수값. 초과학기 학생은 없다고 가정한다. </td>
+                    </tr>
+                    <tr>
+                      <td>이수과목 개수</td>
+                      <td>1~10의 정수값.</td>
+                  </tr>
+                    <tr>
+                        <td>학점/이수학점</td>
+                        <td>학점은 F,D,D+,C,C+,B,B+,A,A+ 중 하나가 들어오며 각 기호의 점수변환은 A+ 4.5를 만점으로 0.5점씩 단계별로 하향한다.
+                          각 과목별 이수 학점은 1~3의 정수값이다. 총 이수학점은 24를 넘을 수 없다. 또한, Pass/Fail을 평가하는 P/F 과목은 입력으로 들어오지 않음을 가정한다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>지난학기 장학금 지급 여부</td>
+                        <td>char 형식의 T 또는 F가 입력으로 들어옴. T는 True의 약자로 장학금을 지급 받았음을 F는 False의 약자로 지급 못받음을 의미함.</td>
+                    </tr>
+                    
+                </tbody>
+            </table> 
           </div>
         </div>
         <!-- 출력  -->
@@ -105,7 +136,7 @@
           </div>
           <div class="problem_text">
             <p>
-              첫째 줄에, 42로 나누었을 때, 서로 다른 나머지가 몇 개 있는지 출력한다.
+              각 학생 별로 다음학기 장학금 지급 여부를 T 또는 F로 출력한다. 이때, 장학금 지급 영구 상실은 PF로 출력한다. (졸업 또는 지급학기를 넘어선 것은 영구 상실 PF로 이해한다.)
             </p>
           </div>
         </div>
@@ -115,9 +146,20 @@
             <div class="col-md-6">
               <section id="sampleinput1">
               <div class="headline">
-              <h4>예제 입력 1</h4>
+                <h4>예제 입력 1</h4>
               </div>
-              <pre class="sampledata" id="sample-input-1">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</pre>
+              <pre class="sampledata" id="sample-input-1">
+17 4 4 A+/3 B/2 A/3 B+/3 T
+18 4 4 A+/3 A+/3 A+/3 A+/3 T
+19 3 6 A+/3 A+/3 A/3 B+/3 B+/3 B+/3 T
+17 6 6 A+/3 A+/2 A/3 B+/3 B+/3 B+/3 T
+17 6 4 C+/3 C/3 C/3 B+/3 F
+17 6 4 A+/3 A+/2 A/3 B+/3 T
+14 8 4 A+/3 A+/2 A/3 B+/3 T
+14 7 4 A+/3 A+/2 A/3 B+/3 T
+16 6 3 A+/3 A/3 B+/3 T
+15 7 3 A+/3 A/3 B+/3 T
+              </pre>
               </section>
             </div>
             <div class="col-md-6">
@@ -125,58 +167,29 @@
               <div class="headline">
               <h4>예제 출력 1</h4>
               </div>
-              <pre class="sampledata" id="sample-output-1">10</pre>
+              <pre class="sampledata" id="sample-output-1">
+F
+T
+T
+T
+PF
+T
+PF
+T
+F
+T
+              </pre>
               </section>
             </div>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-6">
-              <section id="sampleinput1">
-              <div class="headline">
-              <h4>예제 입력 2</h4>
-              </div>
-              <pre class="sampledata" id="sample-input-1">42<br>84<br>252<br>420<br>840<br>126<br>42<br>84<br>420<br>126</pre>
-              </section>
-            </div>
-            <div class="col-md-6">
-              <section id="sampleoutput1">
-              <div class="headline">
-              <h4>예제 출력 2</h4>
-              </div>
-              <pre class="sampledata" id="sample-output-1">1</pre>
-              </section>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-6">
-              <section id="sampleinput1">
-              <div class="headline">
-              <h4>예제 입력 3</h4>
-              </div>
-              <pre class="sampledata" id="sample-input-1">39<br>40<br>41<br>42<br>43<br>44<br>82<br>83<br>84<br>85</pre>
-              </section>
-            </div>
-            <div class="col-md-6">
-              <section id="sampleoutput1">
-              <div class="headline">
-              <h4>예제 출력 3</h4>
-              </div>
-              <pre class="sampledata" id="sample-output-1">6</pre>
-              </section>
-            </div>
-          </div>
-        </div>
-        <!-- 출처 -->
+         <!-- Hint -->
         <div class="col-md-12">
           <div class="headline">
-            <h4> 출처 </h4>
+            <h4> 힌트 </h4>
           </div>
           <div>
-            <a href="https://www.acmicpc.net/problem/3052"> COCI(Croatian Open Competition in Informatics) 2006/2007 Contest #1 </a>
+            - <code>string</code>에서 유용한 함수 <a href="https://www.cplusplus.com/reference/string/string/">substr(), find()</a>을 활용해 보세요. <br>
+            - 문자를 숫자로 바꾸어주는 유용한 함수 <a href="https://www.cplusplus.com/reference/string/stoi/">std::string::stoi()</a>을 활용해 보세요. <br>
+            - <code>if</code>문이 너무 많아 복잡해 질때는 <a href="https://dojang.io/mod/page/view.php?id=145">삼항연산자</a>를 활용해서 간결하게 코드를 짜보세요. <br>
           </div>
         </div>
       </div><!-- /.blog-main -->
